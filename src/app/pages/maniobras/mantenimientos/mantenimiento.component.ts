@@ -122,7 +122,7 @@ export class MantenimientoComponent implements OnInit {
   createFormGroup() {
     this.regForm = this.fb.group({
       tipoMantenimiento: ['', [Validators.required]],
-      tipoLavado: [{ value: 'B', disabled: true }, [Validators.required]],
+      tipoLavado: [{ value: 'BASICO', disabled: true }, [Validators.required]],
       cambioGrado: [{ value: false, disabled: true }],
       folio: [''],
       fileFolio: [''],
@@ -363,7 +363,7 @@ export class MantenimientoComponent implements OnInit {
   onChangeTipoMantenimiento(event: { value: string; }) {
     if (event.value === 'LAVADO') {
       if (this.tipoLavado.value === '' || this.tipoLavado.value === undefined)
-        this.regForm.controls["tipoLavado"].setValue("B");
+        this.regForm.controls["tipoLavado"].setValue("BASICO");
       this.tipoLavado.enable({ onlySelf: true });
 
     } else {
